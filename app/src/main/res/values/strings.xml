@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">DevIntensive</string>
+    <string name="app_name">Чалых Максим</string>
+
+    <string name="about_me">"Утро вечера мудренее, но и в вечере что-то есть."  ©Высоцкий В.С.</string>
+    <string name="about_title">О себе</string>
+    <string name="repozitori_title">Репозиторий</string>
+    <string name="repozitori_text">github.com/Nazgulius/DevIntensive</string>
+    <string name="prof_social_title">Профиль в VK</string>
+    <string name="prof_social_text">vk.com/id7767648</string>
+    <string name="mail_title">Электронная почта</string>
+    <string name="mail_text">nazgulius@yandex.ru</string>
+    <string name="phone_title">Мобильный телефон</string>
+    <string name="phone_text">+7 (926) 782-60-22</string>
+
+    <string name="quantity_rating">4</string>
+    <string name="quantity_lines_code">500</string>
+    <string name="quantity_projects">1</string>
+    <string name="rating">Рейтинг</string>
+    <string name="lines_code">Написано строк кода</string>
+    <string name="projects">Проектов</string>
+    <string name="sans_serif_condensed">sans-serif-condensed</string>
 </resources>
