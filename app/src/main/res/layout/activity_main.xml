@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 app:contentScrim="@color/color_primary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
                 <ImageView
                     android:id="@+id/user_photo_img"
                     android:layout_width="match_parent"
@@ -45,8 +46,6 @@
                     android:layout_marginTop="@dimen/spacing_normal_16dp"/>
 
             </android.support.design.widget.CollapsingToolbarLayout>
-
-
 
         </android.support.design.widget.AppBarLayout>
 

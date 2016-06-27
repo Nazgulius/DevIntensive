@@ -10,10 +10,11 @@
                 android:paddingTop="@dimen/spacing_medial_24dp">
 
     <ImageView
+        android:id="@+id/coll_img"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="@dimen/spacing_normal_16dp"
-        android:background="@color/color_accent"/>
+        android:src="@drawable/user_foto_256"/>
 
 
     <LinearLayout
@@ -38,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="asdasds@mail.ru"
+            android:text="nazgulius@mail.ru"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_size_small_14sp"/>
 

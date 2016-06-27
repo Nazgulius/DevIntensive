@@ -1,6 +1,8 @@
 package com.softdesign.devintensive.ui.activities;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,11 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
 import com.softdesign.devintensive.utils.ConstantManager;
+import com.softdesign.devintensive.utils.RoundImage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +40,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Toolbar mToolbar;
     private DrawerLayout mNavigationDrawer;
     private FloatingActionButton mFab;
-    private EditText mUserPhone,mUserMail, mUserVk, mUserGit, mUserBio;
+    private EditText mUserPhone, mUserMail, mUserVk, mUserGit, mUserBio;
     private List<EditText> mUserInfoViews;
-
+    private String mUserName, mMail;
 
 
     @Override
@@ -49,7 +53,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mDataManager = DataManager.getInstance();
         mCollImg = (ImageView) findViewById(R.id.coll_img);
-        mCoordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordination_container);
+        mUserName = (String) getText(R.string.user_name);
+        mMail = (String) getText(R.string.mail_text);
+        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordination_container);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mNavigationDrawer = (DrawerLayout) findViewById(R.id.navigation_drawer);
         mFab = (FloatingActionButton) findViewById(R.id.fab);
@@ -65,7 +71,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mUserInfoViews.add(mUserVk);
         mUserInfoViews.add(mUserGit);
         mUserInfoViews.add(mUserBio);
-
 
         mFab.setOnClickListener(this);
         setToolbar();
@@ -84,7 +89,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             mNavigationDrawer.openDrawer(GravityCompat.START);
         }
         return super.onOptionsItemSelected(item);
@@ -132,7 +137,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab:
-                showSnackbar("Click!!");
                 if (mCurrentEditMode == 0) {
                     changeEditMode(1);
                     mCurrentEditMode = 1;
@@ -151,22 +155,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         outState.putInt(ConstantManager.EDIT_MODE_KEY, mCurrentEditMode);
     }
 
-    private void showSnackbar(String message){
+    private void showSnackbar(String message) {
         Snackbar.make(mCoordinatorLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
-    private void setToolbar(){
+    private void setToolbar() {
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null){
+        if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
     }
 
-    private void setupDraver(){
+    private void setupDraver() {
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        setupDrawerHeader(navigationView, getRoundBitmap(R.drawable.user_foto_256), mUserName, mMail);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -178,11 +183,33 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         });
     }
 
+    private Bitmap getRoundBitmap(int drawableRes) {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawableRes);
+        bitmap = RoundImage.getRoundedBitmap(bitmap);
+        return bitmap;
+    }
+
+    private void setupDrawerHeader(NavigationView parent, Bitmap avatar, String name, String email) {
+        View view = parent.getHeaderView(0);
+        if (avatar != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.coll_img);
+            imageView.setImageBitmap(avatar);
+        }
+        if (name != null) {
+            TextView textView = (TextView) view.findViewById(R.id.user_name_text);
+            textView.setText(name);
+        }
+        if (email != null) {
+            TextView textView = (TextView) view.findViewById(R.id.user_email_text);
+            textView.setText(email);
+        }
+    }
+
     /*
     * переключает в режим редактирования
     * есди 1 режим редактирования, если 0 режим просмотра
     * */
-    private void changeEditMode(int mode){
+    private void changeEditMode(int mode) {
         if (mode == 1) {
             mFab.setImageResource(R.drawable.ic_done_black_24dp);
             for (EditText userValue : mUserInfoViews) {
@@ -190,7 +217,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 userValue.setFocusable(true);
                 userValue.setFocusableInTouchMode(true);
             }
-        } else{
+        } else {
             mFab.setImageResource(R.drawable.ic_create_black_24dp);
             for (EditText userValue : mUserInfoViews) {
                 userValue.setEnabled(false);
@@ -201,17 +228,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
-    private void loadUserInfoValue(){
+    private void loadUserInfoValue() {
         List<String> userData = mDataManager.getPreferencesManager().loadUserProfileData();
-        for (int i=0; i < userData.size() ;i++){
+        for (int i = 0; i < userData.size(); i++) {
             mUserInfoViews.get(i).setText(userData.get(i));
         }
     }
 
 
-    private void saveUserInfoValue(){
+    private void saveUserInfoValue() {
         List<String> userData = new ArrayList<>();
-        for (EditText userFieldView : mUserInfoViews){
+        for (EditText userFieldView : mUserInfoViews) {
             userData.add(userFieldView.getText().toString());
         }
         mDataManager.getPreferencesManager().saveUserProfileData(userData);
@@ -228,7 +255,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
 
     }
-
 
 
 }

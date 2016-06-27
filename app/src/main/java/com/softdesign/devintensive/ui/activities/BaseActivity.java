@@ -11,11 +11,12 @@ import android.widget.Toast;
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.utils.ConstantManager;
 
-public class BaseActivity extends AppCompatActivity{
-    static final String TAG = ConstantManager.TAG_PREFIX+"Base Activity";
+public class BaseActivity extends AppCompatActivity {
+    static final String TAG = ConstantManager.TAG_PREFIX + "Base Activity";
     protected ProgressDialog mProgressDialog;
-    public void showProgress(){
-        if (mProgressDialog==null){
+
+    public void showProgress() {
+        if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this, R.style.custom_dialog);
             mProgressDialog.setCancelable(false);
             mProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -27,20 +28,23 @@ public class BaseActivity extends AppCompatActivity{
         }
 
     }
-    public void hideProgress(){
-        if (mProgressDialog != null){
-            if (mProgressDialog.isShowing()){
+
+    public void hideProgress() {
+        if (mProgressDialog != null) {
+            if (mProgressDialog.isShowing()) {
                 mProgressDialog.hide();
             }
         }
 
     }
-    public void showError(String messege,Exception error){
+
+    public void showError(String messege, Exception error) {
         showToast(messege);
         Log.e(TAG, String.valueOf(error));
 
     }
-    public void showToast(String messege){
-        Toast.makeText (this, messege, Toast.LENGTH_LONG ).show();
+
+    public void showToast(String messege) {
+        Toast.makeText(this, messege, Toast.LENGTH_LONG).show();
     }
 }
