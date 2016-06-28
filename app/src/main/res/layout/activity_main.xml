@@ -61,6 +61,7 @@
                 tools:context=".ui.activities.MainActivity">
 
                 <!--Scroll total bar-->
+
             <android.support.design.widget.AppBarLayout
                 android:id="@+id/appbar_layout_TotalBar"
                 android:theme="@style/AppTheme.AppBarOverlay"
@@ -70,8 +71,8 @@
                 <!--Bar total-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="104dp"
-                    android:background="#5d5d5d"
+                    android:layout_height="@dimen/spacing_larger_104dp"
+                    android:background="@color/color_grey"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
@@ -140,7 +141,7 @@
                         android:src="@drawable/ic_phone_black_24dp"/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/spacing_zero_0dp"
                         android:layout_height="@dimen/size_large_72"
                         android:layout_gravity="bottom"
                         android:layout_marginLeft="@dimen/spacing_medium_32dp"
@@ -189,7 +190,7 @@
                         android:src="@drawable/ic_mail_black_24dp"/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/spacing_zero_0dp"
                         android:layout_height="@dimen/size_large_72"
                         android:layout_gravity="bottom"
                         android:layout_marginLeft="@dimen/spacing_medium_32dp"
@@ -238,7 +239,7 @@
                         android:src="@drawable/vk_circle"/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/spacing_zero_0dp"
                         android:layout_height="@dimen/size_large_72"
                         android:layout_gravity="bottom"
                         android:layout_marginLeft="@dimen/spacing_medium_32dp"
@@ -287,7 +288,7 @@
                         android:src="@drawable/github_circle"/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/spacing_zero_0dp"
                         android:layout_height="@dimen/size_large_72"
                         android:layout_gravity="bottom"
                         android:layout_marginLeft="@dimen/spacing_medium_32dp"
@@ -336,7 +337,7 @@
                         android:src="@drawable/ic_account_circle_black_24dp"/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/spacing_zero_0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:layout_marginLeft="@dimen/spacing_medium_32dp"
