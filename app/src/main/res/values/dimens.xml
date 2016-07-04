@@ -11,12 +11,15 @@
     <dimen name="size_large_72">72dp</dimen>
 
     <!--Spaces-->
+    <dimen name="spacing_zero_0dp">0dp</dimen>
     <dimen name="spacing_small_8dp">8dp</dimen>
     <dimen name="spacing_normal_16dp">16dp</dimen>
     <dimen name="spacing_medial_24dp">24dp</dimen>
     <dimen name="spacing_medium_32dp">32dp</dimen>
     <dimen name="spacing_large_56dp">56dp</dimen>
+    <dimen name="spacing_large_60dp">60dp</dimen>
     <dimen name="spacing_larger_72dp">72dp</dimen>
+    <dimen name="spacing_larger_104dp">104dp</dimen>
 
     <!--Text-->
     <dimen name="text_size_micro_12sp">12sp</dimen>
@@ -24,5 +27,7 @@
     <dimen name="text_size_medium_18sp">18sp</dimen>
     <dimen name="text_size_large_22sp">22sp</dimen>
     <dimen name="line_size">2dp</dimen>
+    <dimen name="image_profil_spacing_256dp">256dp</dimen>
 
+    <dimen name="fab_space_right">8dp</dimen>
 </resources>

@@ -1,12 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="icon">
         <item name="android:layout_width">@dimen/size_small_24</item>
@@ -37,6 +46,12 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_marginTop">@dimen/size_small_24</item>
         <item name="android:layout_marginBottom">@dimen/size_small_24</item>
+        <item name="android:background">@color/color_grey_light</item>
+    </style>
+
+    <style name="vertical_line_mini">
+        <item name="android:layout_width">@dimen/line_size</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/color_grey_light</item>
     </style>
 
@@ -77,6 +92,15 @@
     <style name="text_view.bottom" parent="text_view">
         <item name="android:layout_marginBottom">@dimen/spacing_medial_24dp</item>
         <item name="android:textSize">@dimen/size_very_small_16</item>
+    </style>
+
+    <style name="custom_dialog">
+        <item name="android:fullDark">@android:color/transparent</item>
+    </style>
+
+    <style name="ava_menu_w_h">
+        <item name="android:layout_width">@dimen/spacing_large_60dp</item>
+        <item name="android:layout_height">@dimen/spacing_large_60dp</item>
     </style>
 
 </resources>

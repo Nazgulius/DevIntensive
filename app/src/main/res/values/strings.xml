@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Чалых Максим</string>
 
+    <string name="user_name">Чалых Максим</string>
     <string name="about_me">"Утро вечера мудренее, но и в вечере что-то есть."  ©Высоцкий В.С.</string>
     <string name="about_title">О себе</string>
     <string name="repozitori_title">Репозиторий</string>
@@ -19,4 +20,7 @@
     <string name="lines_code">Написано строк кода</string>
     <string name="projects">Проектов</string>
     <string name="sans_serif_condensed">sans-serif-condensed</string>
+
+    <string name="menu_me_profile">Мой профиль</string>
+    <string name="menu_team">Команда</string>
 </resources>
