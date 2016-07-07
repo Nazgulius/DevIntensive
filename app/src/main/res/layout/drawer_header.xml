@@ -40,6 +40,5 @@
             android:text="@string/mail_text"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text_size_small_14sp"/>
-
     </LinearLayout>
 </RelativeLayout>

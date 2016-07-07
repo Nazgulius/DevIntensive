@@ -26,7 +26,6 @@ public class BaseActivity extends AppCompatActivity {
             mProgressDialog.show();
             mProgressDialog.setContentView(R.layout.progress_splash);
         }
-
     }
 
     public void hideProgress() {
@@ -35,13 +34,11 @@ public class BaseActivity extends AppCompatActivity {
                 mProgressDialog.hide();
             }
         }
-
     }
 
     public void showError(String messege, Exception error) {
         showToast(messege);
         Log.e(TAG, String.valueOf(error));
-
     }
 
     public void showToast(String messege) {

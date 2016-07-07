@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/login_bg"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".ui.activities.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/email_login_form"
+        style="@style/login_form">
+
+        <LinearLayout
+            style="@style/match_parent_and_wrap_content">
+
+            <View
+                style="@style/line_4dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/input_layout_sing_in">
+
+                <TextView
+                    style="@style/sing_in_top"
+                    android:fontFamily="sans-serif"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/login_layout_email">
+
+            <AutoCompleteTextView
+                android:id="@+id/sing_in_email"
+                style="@style/login_email_line"
+                android:fontFamily="sans-serif"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/login_layout_password">
+
+            <EditText
+                android:id="@+id/sing_in_password"
+                style="@style/login_password_line"
+                android:fontFamily="sans-serif"
+                android:imeActionId="@+id/login"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/email_sign_in_button"
+            style="@style/login_button"/>
+
+        <TextView
+            style="@style/login_remember_password"/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -4,9 +4,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:orientation="vertical"
-              android:background="@android:color/transparent"
-              >
-
+              android:background="@android:color/transparent">
 
     <ProgressBar
         android:id="@+id/progress"
