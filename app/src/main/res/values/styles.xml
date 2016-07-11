@@ -12,9 +12,9 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="icon">
@@ -101,6 +101,88 @@
     <style name="ava_menu_w_h">
         <item name="android:layout_width">@dimen/spacing_large_60dp</item>
         <item name="android:layout_height">@dimen/spacing_large_60dp</item>
+    </style>
+
+    <!-- login activity -->
+    <style name="login_form">
+        <item name="android:layout_width">@dimen/login_bar_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="match_parent_and_wrap_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="line_4dp">
+        <item name="android:layout_width">@dimen/spacing_small_4dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medial_24dp</item>
+        <item name="android:background">@color/color_accent</item>
+    </style>
+
+    <style name="input_layout_sing_in" parent="match_parent_and_wrap_content">
+        <item name="android:layout_marginLeft">@dimen/spacing_medial_20dp</item>
+        <item name="android:layout_marginRight">@dimen/spacing_medial_24dp</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medial_24dp</item>
+    </style>
+
+    <style name="sing_in_top">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/action_sign_in</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:textSize">@dimen/text_size_large_24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="login_layout_email" parent="match_parent_and_wrap_content">
+        <item name="android:layout_marginLeft">@dimen/spacing_medial_24dp</item>
+        <item name="android:layout_marginRight">@dimen/spacing_medial_24dp</item>
+    </style>
+
+    <style name="login_email_line" parent="match_parent_and_wrap_content">
+        <item name="android:hint">@string/prompt_email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="login_layout_password" parent="match_parent_and_wrap_content">
+        <item name="android:layout_marginLeft">@dimen/spacing_medial_24dp</item>
+        <item name="android:layout_marginRight">@dimen/spacing_medial_24dp</item>
+    </style>
+
+    <style name="login_password_line" parent="match_parent_and_wrap_content">
+        <item name="android:hint">@string/prompt_password</item>
+        <item name="android:imeActionLabel">@string/action_sign_in_short</item>
+        <item name="android:imeOptions">actionUnspecified</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="login_button">
+        <item name="android:layout_width">@dimen/spacing_larger_132dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medial_24dp</item>
+        <item name="android:background">@drawable/rectangle_rounded_all</item>
+        <item name="android:text">@string/action_sign_in</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_medium_18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="login_remember_password" parent="match_parent_and_wrap_content">
+        <item name="android:layout_marginBottom">@dimen/spacing_medial_24dp</item>
+        <item name="android:layout_marginTop">@dimen/spacing_normal_16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">Забыли пароль?</item>
+        <item name="android:textSize">@dimen/text_size_medium_16sp</item>
     </style>
 
 </resources>

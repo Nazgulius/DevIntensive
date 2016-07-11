@@ -12,12 +12,13 @@ public class DataManager {
         this.mPreferencesManager = new PreferencesManager();
     }
 
-    public static DataManager getInstance(){
-        if (INSTANCE == null){
+    public static DataManager getInstance() {
+        if (INSTANCE == null) {
             INSTANCE = new DataManager();
         }
         return INSTANCE;
     }
+
     public PreferencesManager getPreferencesManager() {
         return mPreferencesManager;
     }

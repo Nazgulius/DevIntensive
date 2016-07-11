@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-public class DevintensiveApplication extends Application{
+public class DevintensiveApplication extends Application {
     public static SharedPreferences sSharedPreferencec;
 
 

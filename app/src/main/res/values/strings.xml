@@ -23,4 +23,28 @@
 
     <string name="menu_me_profile">Мой профиль</string>
     <string name="menu_team">Команда</string>
+    <string name="user_profile.placeholder.image">Изменить фотографию профеля</string>
+    <string name="user_profile.dialog.galerey">Загрузить из галереи</string>
+    <string name="user_profile.dialog.camera">Сделать снимок</string>
+    <string name="user_profile.dialog.cancel">Отмена</string>
+    <string name="user_profile.dialog.title">Изменить фотографию пользователя</string>
+    <string name="user_profile.chose.messege">Выберите фото</string>
+    <string name="message_need_take_permissions">Для корректной работы приложения необходимо дать требуемые разрешение</string>
+    <string name="main_activity_error_not_found_call_app">Не найдено приложение для звонка</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- login activity -->
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">ВОЙТИ</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
 </resources>
