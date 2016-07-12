@@ -31,7 +31,7 @@
                     style="@style/layout_score">
 
                     <TextView
-                        android:id="@+id/rating_title_tv"
+                        android:id="@+id/rating_value_tv"
                         style="@style/rating_value"/>
 
                     <TextView
@@ -48,7 +48,7 @@
                     style="@style/layout_score">
 
                     <TextView
-                        android:id="@+id/lines_code_title_tv"
+                        android:id="@+id/lines_code_value_tv"
                         style="@style/lines_code_value"/>
 
                     <TextView
@@ -65,7 +65,7 @@
                     style="@style/layout_score">
 
                     <TextView
-                        android:id="@+id/project_title_tv"
+                        android:id="@+id/project_value_tv"
                         style="@style/projects_value"/>
 
                     <TextView
