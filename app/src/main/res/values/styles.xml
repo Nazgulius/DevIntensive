@@ -186,4 +186,11 @@
         <item name="android:textSize">@dimen/text_size_medium_16sp</item>
     </style>
 
+    <!--ToolBab-->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/color_white</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:actionMenuTextColor">@color/color_white</item>
+    </style>
+
 </resources>

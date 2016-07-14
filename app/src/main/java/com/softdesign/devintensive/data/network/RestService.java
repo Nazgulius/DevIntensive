@@ -1,6 +1,7 @@
 package com.softdesign.devintensive.data.network;
 
 import com.softdesign.devintensive.data.network.req.UserLoginReq;
+import com.softdesign.devintensive.data.network.res.UserListRes;
 import com.softdesign.devintensive.data.network.res.UserModelRes;
 
 import okhttp3.MultipartBody;
@@ -28,4 +29,7 @@ public interface RestService {
 
     @GET
     Call<ResponseBody> getImage(@Url String url);
+
+    @GET("user/list?orderBy=rating")
+    Call<UserListRes> getUserList();
 }
