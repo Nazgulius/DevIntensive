@@ -61,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Рейтинг"
-                        android:fontFamily="@String/ff_regular"
+                        android:fontFamily="@string/ff_regular"
                         android:textSize="@dimen/font_small_14"
                         android:textColor="@color/color_black"/>
 
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Написано строк кода"
-                        android:fontFamily="@String/ff_regular"
+                        android:fontFamily="@string/ff_regular"
                         android:textSize="@dimen/font_small_14"
                         android:textColor="@color/color_black"/>
 
@@ -107,14 +107,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Проектов"
-                        android:fontFamily="@String/ff_regular"
+                        android:fontFamily="@string/ff_regular"
                         android:textSize="@dimen/font_small_14"
                         android:textColor="@color/color_black"/>
 
                 </LinearLayout>
 
             </LinearLayout>
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bio_txt"
@@ -123,7 +123,7 @@
             android:maxLines="3"
             android:paddingRight="@dimen/spacing_normal_16dp"
             android:paddingLeft="@dimen/spacing_normal_16dp"
-            android:fontFamily="@shring/ff_regular"
+            android:fontFamily="@string/ff_regular"
             android:textSize="@dimen/font_small_14"/>
         <View
             android:layout_width="match_parent"

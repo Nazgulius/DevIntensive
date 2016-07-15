@@ -33,19 +33,24 @@
         <activity
             android:name=".ui.activities.LoginActivity"
             android:parentActivityName=".ui.activities.MainActivity">
-           <!-- <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
-        <!--&lt;!&ndash;
+        <!--
+ &lt;!&ndash;
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         &ndash;&gt;
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>-->
+            android:value="@integer/google_play_services_version"/>
+        -->
 
         <activity android:name=".ui.activities.UserListActivity">
             <intent-filter>
@@ -53,6 +58,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.activities.ProfileUserActivity"
+            android:parentActivityName=".ui.activities.UserListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.UserListActivity"/>
         </activity>
     </application>
 

@@ -46,6 +46,8 @@
         completions."
     </string>
     <string name="user_profile.empty_bio">Этот пользователь пока о себе ничего не написал...</string>
+    <string name="ff_medium">sans_serif_medium</string>
+    <string name="ff_regular">sans_serif-condensed</string>
 
 
 </resources>

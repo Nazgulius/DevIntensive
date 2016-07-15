@@ -39,4 +39,6 @@ public interface ConstantManager {
     int NUMBER_VIEW_IN_ARRAY_VK = 2;
     int NUMBER_VIEW_IN_ARRAY_GIT = 3;
     float RADIUS_ROUND_AVATAR_DELITEL = 2.0f;
+
+    String PARCELABLE_KEY = "PARCELABLE_KEY";
 }
