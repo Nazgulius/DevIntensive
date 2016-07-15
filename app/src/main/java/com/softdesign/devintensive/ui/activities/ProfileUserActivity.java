@@ -1,9 +1,10 @@
 package com.softdesign.devintensive.ui.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -26,7 +27,7 @@ public class ProfileUserActivity extends BaseActivity {
     private Toolbar mToolbar;
     private ImageView mProfileImage;
     private EditText mUserBio;
-    private TextView mUserRating,mUserCodeLine, mUserProjects;
+    private TextView mUserRating, mUserCodeLine, mUserProjects;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private CoordinatorLayout mCoordinatorLayout;
 
@@ -40,10 +41,10 @@ public class ProfileUserActivity extends BaseActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mProfileImage = (ImageView) findViewById(R.id.user_photo_img);
         mUserBio = (EditText) findViewById(R.id.bio_txt);
-        mUserRating= (TextView) findViewById(R.id.rating_txt);
+        mUserRating = (TextView) findViewById(R.id.rating_txt);
         mUserCodeLine = (TextView) findViewById(R.id.code_lines_txt);
         mUserProjects = (TextView) findViewById(R.id.projects_txt);
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_profile);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_coordination_container);
 
         mRepoListView = (ListView) findViewById(R.id.repositories_list);
@@ -51,17 +52,18 @@ public class ProfileUserActivity extends BaseActivity {
         initProfileData();
     }
 
-    private void setupToolbar(){
+    private void setupToolbar() {
         setSupportActionBar(mToolbar);
 
         ActionBar actionBar = getSupportActionBar();
 
-        if (actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
     }
-    private void initProfileData(){
+
+    private void initProfileData() {
         UserDTO userDTO = getIntent().getParcelableExtra(ConstantManager.PARCELABLE_KEY);
 
         final List<String> repositories = userDTO.getRepositories();
@@ -71,9 +73,9 @@ public class ProfileUserActivity extends BaseActivity {
         mRepoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Snackbar.make(mCollapsingToolbarLayout, "Репозиторий " + repositories.get(position), Snackbar.LENGTH_LONG).show();
-                // TODO: 15.07.2016 Руализовать просмотр репозитория по Intent.ACTION_VIEW
-
+                Uri repoUri = Uri.parse("https://" + repositories.get(position));
+                Intent viewRepoIntent = new Intent(Intent.ACTION_VIEW, repoUri);
+                startActivity(viewRepoIntent);
             }
         });
 
@@ -83,6 +85,11 @@ public class ProfileUserActivity extends BaseActivity {
         mUserProjects.setText(userDTO.getProjects());
 
         mCollapsingToolbarLayout.setTitle(userDTO.getFullName());
+
+        String userPhoto = userDTO.getPhoto();
+        if (userPhoto.trim().equals("")) {
+            userPhoto = null;
+        }
 
         Picasso.with(this)
                 .load(userDTO.getPhoto())

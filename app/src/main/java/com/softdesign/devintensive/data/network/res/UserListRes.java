@@ -1,11 +1,10 @@
 package com.softdesign.devintensive.data.network.res;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserListRes {
 
@@ -14,13 +13,13 @@ public class UserListRes {
     private boolean success;
     @SerializedName("data")
     @Expose
-    private List<UserData> data = new ArrayList<UserData>();
+    private ArrayList<UserData> data = new ArrayList<UserData>();
 
-    public List<UserData> getData() {
+    public ArrayList<UserData> getData() {
         return data;
     }
 
-    public class UserData{
+    public class UserData implements Serializable{
         @SerializedName("_id")
         @Expose
         private String id;
@@ -63,6 +62,26 @@ public class UserListRes {
 
         public String getFullName() {
             return firstName + " " + secondName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            UserData userData = (UserData) o;
+
+            if (firstName != null ? !firstName.equals(userData.firstName) : userData.firstName != null)
+                return false;
+            return secondName != null ? secondName.equals(userData.secondName) : userData.secondName == null;
+
+        }
+
+        @Override
+        public int hashCode() {
+            int result = firstName != null ? firstName.hashCode() : 0;
+            result = 31 * result + (secondName != null ? secondName.hashCode() : 0);
+            return result;
         }
     }
 }

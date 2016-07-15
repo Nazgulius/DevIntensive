@@ -1,17 +1,73 @@
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="112dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.activities.MainActivity">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <!-- total bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_larger_104dp"
+            android:background="@color/color_grey"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/layout_score">
+
+                <TextView
+                    android:id="@+id/rating_value_tv"
+                    style="@style/rating_value"/>
+
+                <TextView
+                    android:id="@+id/rating_body_tv"
+                    style="@style/text_view.bottom"
+                    android:fontFamily="@string/sans_serif_condensed"
+                    android:text="@string/rating"/>
+            </LinearLayout>
+
+            <View
+                style="@style/vertical_line"></View>
+
+            <LinearLayout
+                style="@style/layout_score">
+
+                <TextView
+                    android:id="@+id/lines_code_value_tv"
+                    style="@style/lines_code_value"/>
+
+                <TextView
+                    android:id="@+id/lines_code_body_tv"
+                    style="@style/text_view.bottom"
+                    android:fontFamily="sans_serif_condensed"
+                    android:text="@string/lines_code"/>
+            </LinearLayout>
+
+            <View
+                style="@style/vertical_line"></View>
+
+            <LinearLayout
+                style="@style/layout_score">
+
+                <TextView
+                    android:id="@+id/project_value_tv"
+                    style="@style/projects_value"/>
+
+                <TextView
+                    android:id="@+id/project_body_tv"
+                    style="@style/text_view.bottom"
+                    android:fontFamily="sans_serif_condensed"
+                    android:text="@string/projects"/>
+            </LinearLayout>
+        </LinearLayout>
 
 
         <!--GitHub-->
@@ -59,15 +115,17 @@
             <LinearLayout
                 android:layout_width="@dimen/spacing_zero_0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/spacing_medium_32dp"
                 android:layout_marginRight="@dimen/spacing_normal_16dp"
+                android:minHeight="@dimen/size_large_72"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_size_medium_16sp">
 
                     <EditText
                         android:id="@+id/about_et"

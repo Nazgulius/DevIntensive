@@ -14,33 +14,36 @@ import com.softdesign.devintensive.data.network.res.UserListRes;
 import com.softdesign.devintensive.ui.views.AspectRatioImageView;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder> {
 
     private Context mContext;
     private List<UserListRes.UserData> mUsers;
     private UserViewHolder.CustomClickListener mCustomClickListener;
 
-    public UserAdapter(List<UserListRes.UserData> users, UserViewHolder.CustomClickListener customClickListener) {
+    public UsersAdapter(List<UserListRes.UserData> users, UserViewHolder.CustomClickListener customClickListener) {
         mUsers = users;
         this.mCustomClickListener = customClickListener;
     }
 
     @Override
-    public UserAdapter.UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UsersAdapter.UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         mContext = parent.getContext();
         View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user_list, parent, false);
         return new UserViewHolder(convertView, mCustomClickListener);
     }
 
     @Override
-    public void onBindViewHolder(UserAdapter.UserViewHolder holder, int position) {
+    public void onBindViewHolder(UsersAdapter.UserViewHolder holder, int position) {
         UserListRes.UserData user = mUsers.get(position);
 
 
         Picasso.with(mContext)
                 .load(user.getPublicInfo().getPhoto())
+                .resize(mContext.getResources().getDimensionPixelSize(R.dimen.profile_image_size),
+                        mContext.getResources().getDimensionPixelSize(R.dimen.profile_image_size))
                 .placeholder(mContext.getResources().getDrawable(R.drawable.header_bg_1))
                 .error(mContext.getResources().getDrawable(R.drawable.header_bg_1))
                 .into(holder.userPhoto);
@@ -58,7 +61,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mUsers.size();
+    }
+
+    public void setFilter(List<UserListRes.UserData> users) {
+        mUsers = new ArrayList<>();
+        mUsers.addAll(users);
+        notifyDataSetChanged();
+    }
+
+    public UserListRes.UserData getUser(int position) {
+        return mUsers.get(position);
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -86,7 +99,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
         @Override
         public void onClick(View v) {
-            if (mListener != null){
+            if (mListener != null) {
                 mListener.onUserItemClickListener(getAdapterPosition());
             }
         }

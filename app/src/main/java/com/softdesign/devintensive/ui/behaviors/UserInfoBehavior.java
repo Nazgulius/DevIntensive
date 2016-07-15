@@ -27,7 +27,7 @@ public class UserInfoBehavior<V extends LinearLayout> extends AppBarLayout.Scrol
                 R.styleable.UserInfoBehavior_behavior_min_height, 56);
         a.recycle();
         mMinAppbarHeight = UIHelper.getStatusBarHeight()+UIHelper.getActionBarHeight(); //80dp
-        mMaxAppbarHeight = context.getResources().getDimensionPixelSize(R.dimen.image_profil_spacing_256dp); //256dp
+        mMaxAppbarHeight = context.getResources().getDimensionPixelSize(R.dimen.profile_image_size); //256dp
         mMaxUserInfoHeight = context.getResources().getDimensionPixelOffset(R.dimen.spacing_larger_104dp) ; //104dp(112)
     }
     @Override

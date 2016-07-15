@@ -125,4 +125,13 @@ public class PreferencesManager {
         list.add(mSharedPreferences.getString(ConstantManager.USER_SECOND_NAME_KEY, "null"));
         return list;
     }
+
+    public String getUserFullName() {
+        return mSharedPreferences.getString(ConstantManager.USER_FULL_NAME_KEY, "");
+    }
+
+    public String getUserEmail() {
+        return mSharedPreferences.getString(ConstantManager.EDIT_MAIL_KEY, "");
+    }
+
 }

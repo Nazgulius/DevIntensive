@@ -20,6 +20,8 @@ public interface ConstantManager {
     String USER_AVATAR_KEY = "USER_AVATAR_KEY";
     String USER_FIRST_NAME_KEY = "USER_FIRST_NAME_KEY";
     String USER_SECOND_NAME_KEY = "USER_SECOND_NAME_KEY";
+    String USER_FULL_NAME_KEY = "USER_FULL_NAME_KEY";
+    String EDIT_MAIL_KEY = "EDIT_MAIL_KEY";
 
     String FIRST_IMAGE_AVATAR = "android.resource://com.softdesign.devintensive/drawable/ava_mini";
     String FIRST_USER_PHOTO = "android.resource://com.softdesign.devintensive/drawable/user_foto_256";

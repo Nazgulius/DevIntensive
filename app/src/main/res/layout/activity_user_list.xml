@@ -31,7 +31,6 @@
                     app:theme="@style/ToolBarStyle"
                     app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-
         </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/user_list_content"/>

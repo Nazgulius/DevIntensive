@@ -1,9 +1,9 @@
 package com.softdesign.devintensive.data.network.res;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,7 +87,7 @@ public class UserModelRes {
         }
     }
 
-    public class Repositories {
+    public class Repositories implements Serializable{
 
         @SerializedName("repo")
         @Expose
@@ -101,7 +101,7 @@ public class UserModelRes {
         }
     }
 
-    public class Repo {
+    public class Repo implements Serializable{
 
         @SerializedName("_id")
         @Expose
@@ -118,7 +118,7 @@ public class UserModelRes {
         }
     }
 
-    public class PublicInfo {
+    public class PublicInfo implements Serializable{
 
         @SerializedName("bio")
         @Expose
@@ -146,7 +146,7 @@ public class UserModelRes {
         }
     }
 
-    public class ProfileValues {
+    public class ProfileValues implements Serializable{
 
         @SerializedName("homeTask")
         @Expose

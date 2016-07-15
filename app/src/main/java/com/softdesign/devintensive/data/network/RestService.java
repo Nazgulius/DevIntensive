@@ -17,7 +17,6 @@ import retrofit2.http.Url;
 
 public interface RestService {
 
-
     @POST("login")
     Call<UserModelRes> loginUser(@Body UserLoginReq req);
 
