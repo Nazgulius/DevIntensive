@@ -24,7 +24,7 @@ public interface ConstantManager {
     String EDIT_MAIL_KEY = "EDIT_MAIL_KEY";
 
     String FIRST_IMAGE_AVATAR = "android.resource://com.softdesign.devintensive/drawable/ava_mini";
-    String FIRST_USER_PHOTO = "android.resource://com.softdesign.devintensive/drawable/user_foto_256";
+    String FIRST_USER_PHOTO = "android.resource://com.softdesign.devintensive/drawable/user_foto";
     String FIRST_FIELD_GIT = "github.com/";
     String FIRST_FIELD_ABOUT = "";
 

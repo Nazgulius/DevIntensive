@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
 import com.softdesign.devintensive.data.network.req.UserLoginReq;
@@ -106,10 +107,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         showSnackbar(userModel.getData().getToken());
         mDataManager.getPreferencesManager().saveAuthToken(userModel.getData().getToken());
         mDataManager.getPreferencesManager().saveUserId(userModel.getData().getUser().getId());
+        mDataManager.getPreferencesManager().saveUserPhoto(Uri.parse(userModel.getData().getUser().getPublicInfo().getPhoto()));
+        mDataManager.getPreferencesManager().saveAvatarImage(Uri.parse(userModel.getData().getUser().getPublicInfo().getAvatar()));
+        mDataManager.getPreferencesManager().saveUserFullName(userModel.getData().getUser().getFirstName() + " " + userModel.getData().getUser().getSecondName());
         saveUserValues(userModel);
-        saveUserPhotoAndAvatar(userModel);
-        saveUserFieldsValue(userModel);
-        saveFirstSecondNameUser(userModel);
+        saveUserData(userModel);
+        //aveUserPhotoAndAvatar(userModel);
+        //saveUserFieldsValue(userModel);
+        //saveFirstSecondNameUser(userModel);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -133,7 +138,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                 @Override
                 public void onFailure(Call<UserModelRes> call, Throwable t) {
-                    // TODO: 10.07.2016 обработать ошибки
+                    showSnackbar("Ошибка: " + t.getMessage());
                 }
             });
         } else {
@@ -187,5 +192,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mDataManager.getPreferencesManager().saveFirstSecondNameUser(firstName, secondName);
     }
 
+    private void saveUserData(UserModelRes userModel) {
+        List<String> userData = new ArrayList<>();
+        userData.add(userModel.getData().getUser().getContacts().getPhone());
+        userData.add(userModel.getData().getUser().getContacts().getEmail());
+        userData.add(userModel.getData().getUser().getContacts().getVk());
+        userData.add(userModel.getData().getUser().getRepositories().getRepo().get(0).getGit());
+        userData.add(userModel.getData().getUser().getPublicInfo().getBio());
 
+        mDataManager.getPreferencesManager().saveUserProfileData(userData);
+    }
 }

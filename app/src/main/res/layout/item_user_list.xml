@@ -141,7 +141,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/min_size_1dp"
             android:layout_marginTop="@dimen/spacing_normal_16dp"
-            android:layout_marginBottom="@dimen/spacing_small_8dp"
             android:background="@color/color_grey_light"/>
 
         <Button

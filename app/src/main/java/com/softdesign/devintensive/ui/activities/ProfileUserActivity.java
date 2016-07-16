@@ -22,7 +22,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class ProfileUserActivity extends BaseActivity {
+public class ProfileUserActivity extends BaseActivity  {
+
 
     private Toolbar mToolbar;
     private ImageView mProfileImage;
@@ -46,6 +47,7 @@ public class ProfileUserActivity extends BaseActivity {
         mUserProjects = (TextView) findViewById(R.id.projects_txt);
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_coordination_container);
+
 
         mRepoListView = (ListView) findViewById(R.id.repositories_list);
         setupToolbar();
@@ -97,4 +99,6 @@ public class ProfileUserActivity extends BaseActivity {
                 .error(R.drawable.header_bg_1)
                 .into(mProfileImage);
     }
+
+
 }

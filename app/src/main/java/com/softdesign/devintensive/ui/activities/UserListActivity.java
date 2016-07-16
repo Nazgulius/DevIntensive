@@ -27,7 +27,6 @@ import com.softdesign.devintensive.data.storage.models.UserDTO;
 import com.softdesign.devintensive.ui.adapters.UsersAdapter;
 import com.softdesign.devintensive.ui.fragments.RetainFragment;
 import com.softdesign.devintensive.utils.ConstantManager;
-import com.softdesign.devintensive.utils.NetworkStatusChecker;
 import com.softdesign.devintensive.utils.RoundImage;
 import com.squareup.picasso.Picasso;
 
@@ -44,18 +43,15 @@ public class UserListActivity extends BaseActivity implements SearchView.OnQuery
     private static final String TAG_RETAIN_FRAGMENT = "retain_fragment";
 
     private ImageView drawerUsrAvatar;
-    /*private DataManager mDataManager;
-    private UsersAdapter mUsersAdapter;*/
+    private DataManager mDataManager;
+    private UsersAdapter mUsersAdapter;
     private RetainFragment mRetainFragment;
-
     private CoordinatorLayout mCoordinatorLayout;
     private Toolbar mToolbar;
     private DrawerLayout mNavigationDrawer;
     private RecyclerView mRecyclerView;
     private NavigationView mNavigationView;
 
-    private DataManager mDataManager;
-    private UsersAdapter mUsersAdapter;
     private List<UserListRes.UserData> mUsers;
 
     @Override
@@ -83,14 +79,13 @@ public class UserListActivity extends BaseActivity implements SearchView.OnQuery
 
         setupToolbar();
         setupDrawer();
-        //loadUsers();
+        loadUsers();
 
-
-        if (savedInstanceState == null) {
+        /*if (savedInstanceState == null) {
             loadUsersListAndSetupAdapter();
         } else {
             setupUsersListAdapter(mRetainFragment.getUsersList());
-        }
+        }*/
     }
 
     @Override
@@ -198,6 +193,7 @@ public class UserListActivity extends BaseActivity implements SearchView.OnQuery
                     mUsersAdapter = new UsersAdapter(mUsers, new UsersAdapter.UserViewHolder.CustomClickListener() {
                         @Override
                         public void onUserItemClickListener(int position) {
+                           /* showSnackbar("Пользователь с индексом " + position);*/
                             UserDTO userDTO = new UserDTO(mUsers.get(position));
                             Intent profileIntent = new Intent(UserListActivity.this, ProfileUserActivity.class);
                             profileIntent.putExtra(ConstantManager.PARCELABLE_KEY, userDTO);
@@ -221,7 +217,7 @@ public class UserListActivity extends BaseActivity implements SearchView.OnQuery
     }
 
     /* Основной метод загрузки*/
-    private void loadUsersListAndSetupAdapter() {
+   /* private void loadUsersListAndSetupAdapter() {
         if (NetworkStatusChecker.isNetworkAvailable(this)) {
 
             showProgress();
@@ -250,21 +246,22 @@ public class UserListActivity extends BaseActivity implements SearchView.OnQuery
         } else {
             showSnackbar("Сеть на данный момент недоступна, попробуйте позже");
         }
-    }
+    }*/
 
-    private void setupUsersListAdapter(ArrayList<UserListRes.UserData> users) {
-        mUsersAdapter = new UsersAdapter(users, new UsersAdapter.UserViewHolder.CustomClickListener() {
+  /*  private void setupUsersListAdapter(ArrayList<UserListRes.UserData> mUsers) {
+        mUsersAdapter = new UsersAdapter(mUsers, new UsersAdapter.UserViewHolder.CustomClickListener() {
             @Override
             public void onUserItemClickListener(int adapterPosition) {
-                UserDTO userDTO = new UserDTO(mUsersAdapter.getUser(adapterPosition));
+                showSnackbar("Пользователь с индексом " + adapterPosition);
+               *//* UserDTO userDTO = new UserDTO(mUsersAdapter.getUser(adapterPosition));
                 Intent profileIntent = new Intent(UserListActivity.this, ProfileUserActivity.class);
                 profileIntent.putExtra(ConstantManager.PARCELABLE_KEY, userDTO);
 
-                startActivity(profileIntent);
+                startActivity(profileIntent);*//*
             }
         });
         mRecyclerView.setAdapter(mUsersAdapter);
-    }
+    }*/
 
     private void setupToolbar() {
         setSupportActionBar(mToolbar);
