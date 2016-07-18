@@ -8,6 +8,7 @@
     <dimen name="text_size_small_14sp">14sp</dimen>
     <dimen name="text_size_medium_16sp">16sp</dimen>
     <dimen name="text_size_medium_18sp">18sp</dimen>
+    <dimen name="text_size_medium_20sp">20sp</dimen>
     <dimen name="text_size_large_22sp">22sp</dimen>
     <dimen name="text_size_large_24sp">24sp</dimen>
 
@@ -32,9 +33,17 @@
     <dimen name="spacing_larger_132dp">132dp</dimen>
 
     <dimen name="line_size">2dp</dimen>
-    <dimen name="image_profil_spacing_256dp">256dp</dimen>
+    <dimen name="profile_image_size">256dp</dimen>
 
     <dimen name="fab_space_right">8dp</dimen>
     <dimen name="placeholder_photo_size_90dp">90dp</dimen>
     <dimen name="login_bar_width">240dp</dimen>
+
+    <!--fonts-->
+    <dimen name="font_large_24">24sp</dimen>
+    <dimen name="font_medium_20">20sp</dimen>
+    <dimen name="font_small_14">14sp</dimen>
+    <dimen name="min_size_1dp">1dp</dimen>
+
+    <dimen name="drawer_header_avatar_size">60dp</dimen>
 </resources>

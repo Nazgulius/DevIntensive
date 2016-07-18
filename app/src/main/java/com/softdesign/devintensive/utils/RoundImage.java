@@ -10,12 +10,13 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-public class RoundImage {
+import com.squareup.picasso.Transformation;
+
+public class RoundImage implements Transformation {
 
     public static Bitmap getRoundedBitmap(Bitmap bitmap) {
         final Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         final Canvas canvas = new Canvas(output);
-
         final int color = Color.RED;
         final Paint paint = new Paint();
         final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
@@ -32,5 +33,15 @@ public class RoundImage {
         bitmap.recycle();
 
         return output;
+    }
+
+    @Override
+    public Bitmap transform(Bitmap source) {
+        return getRoundedBitmap(source);
+    }
+
+    @Override
+    public String key() {
+        return "circleTransformation";
     }
 }

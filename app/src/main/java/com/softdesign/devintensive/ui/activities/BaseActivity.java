@@ -12,7 +12,7 @@ import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.utils.ConstantManager;
 
 public class BaseActivity extends AppCompatActivity {
-    static final String TAG = ConstantManager.TAG_PREFIX + "Base Activity";
+    private static final String TAG = ConstantManager.TAG_PREFIX + "Base Activity";
     protected ProgressDialog mProgressDialog;
 
     public void showProgress() {
@@ -32,6 +32,7 @@ public class BaseActivity extends AppCompatActivity {
         if (mProgressDialog != null) {
             if (mProgressDialog.isShowing()) {
                 mProgressDialog.hide();
+                mProgressDialog.dismiss();
             }
         }
     }

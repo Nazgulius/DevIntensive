@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mOpenRepositoryImage = (ImageView) findViewById(R.id.open_repository_img);
 
         mProfilePlaceholder = (RelativeLayout) findViewById(R.id.profile_placeholder);
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_profile);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appbar_layout);
         mAvatarImage = (ImageView) findViewById(R.id.user_photo_img); // или id = coll_img
 
@@ -273,6 +273,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 showSnackbar(item.getTitle().toString());
                 item.setChecked(true);
                 mNavigationDrawer.closeDrawer(GravityCompat.START);
+
+                if (item.getItemId() == R.id.user_profile_menu) {
+
+                }
+
+                if (item.getItemId() == R.id.team_menu) {
+                    Intent authIntent = new Intent(MainActivity.this, UserListActivity.class);
+                    finish();
+                    startActivity(authIntent);
+                }
+
                 return false;
             }
         });
@@ -287,7 +298,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     /**
      * получение результата из другой Activity (фото из камеры или галереи)
-     *
      */
   /*  @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -571,7 +581,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // TODO: 03.07.2016 Сделать плейсхолдер и transform + crop
         //mDataManager.getPreferencesManager().saveUserProfileData(selectedImage);
     }
-
 
 
     public void openApplicationSettings() {

@@ -50,7 +50,6 @@ public class PreferencesManager {
         return userFields;
     }
 
-    // изменено с saveUserProfileData
     public void saveUserPhoto(Uri uri) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString(ConstantManager.USER_PHOTO_KEY, uri.toString());
@@ -73,6 +72,15 @@ public class PreferencesManager {
                 ConstantManager.FIRST_IMAGE_AVATAR));
     }
 
+    public void saveUserProfileValues(int[] userValue) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+
+        for (int i = 0; i < USER_VALUES.length; i++) {
+            editor.putString(USER_VALUES[i], String.valueOf(userValue[i]));
+        }
+        editor.apply();
+    }
+
     public List<String> loadUserProfileValues() {
         List<String> userValues = new ArrayList<>();
         userValues.add(mSharedPreferences.getString(ConstantManager.USER_RATING_VALUE, "0"));
@@ -80,8 +88,6 @@ public class PreferencesManager {
         userValues.add(mSharedPreferences.getString(ConstantManager.USER_PROJECT_VALUE, "0"));
         return userValues;
     }
-
-
 
     public void saveAuthToken(String authToken) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -103,14 +109,6 @@ public class PreferencesManager {
         return mSharedPreferences.getString(ConstantManager.USER_ID_KEY, "null");
     }
 
-    public void saveUserProfileValues(int[] userValue) {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-
-        for (int i = 0; i < USER_VALUES.length; i++) {
-            editor.putString(USER_VALUES[i], String.valueOf(userValue[i]));
-        }
-        editor.apply();
-    }
 
     public void saveFirstSecondNameUser(String firstName, String secondName) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -125,4 +123,20 @@ public class PreferencesManager {
         list.add(mSharedPreferences.getString(ConstantManager.USER_SECOND_NAME_KEY, "null"));
         return list;
     }
+
+    /*допольнительнй метод*/
+    public void saveUserFullName(String userFullName) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(ConstantManager.USER_FULL_NAME_KEY, userFullName);
+        editor.apply();
+    }
+
+    public String getUserFullName() {
+        return mSharedPreferences.getString(ConstantManager.USER_FULL_NAME_KEY, "");
+    }
+
+    public String getUserEmail() {
+        return mSharedPreferences.getString(ConstantManager.EDIT_MAIL_KEY, "");
+    }
+
 }

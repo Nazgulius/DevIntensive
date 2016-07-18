@@ -39,6 +39,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_black</item>
         <item name="android:textColorHint">@color/color_grey</item>
+        <item name="android:enabled">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:textSize">@dimen/text_size_medium_16sp</item>
     </style>
 
     <style name="vertical_line">
@@ -184,6 +187,26 @@
         <item name="android:gravity">center</item>
         <item name="android:text">Забыли пароль?</item>
         <item name="android:textSize">@dimen/text_size_medium_16sp</item>
+    </style>
+
+    <!--ToolBab-->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/color_white</item>
+        <item name="android:textColorSecondary">@color/color_white</item>
+        <item name="android:actionMenuTextColor">@color/color_white</item>
+    </style>
+
+    <!-- Contacts page header text style -->
+    <style name="header_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <!-- Contacts page header big text style -->
+    <style name="header_text.large">
+        <item name="android:textSize">@dimen/text_size_medium_20sp</item>
     </style>
 
 </resources>

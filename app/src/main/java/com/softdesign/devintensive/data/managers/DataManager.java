@@ -6,30 +6,28 @@ import android.content.Context;
 import com.softdesign.devintensive.data.network.RestService;
 import com.softdesign.devintensive.data.network.ServiceGenerator;
 import com.softdesign.devintensive.data.network.req.UserLoginReq;
+import com.softdesign.devintensive.data.network.res.UserListRes;
 import com.softdesign.devintensive.data.network.res.UserModelRes;
 import com.softdesign.devintensive.utils.DevintensiveApplication;
 
-import java.io.File;
-
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 public class DataManager {
+
     private static DataManager INSTANCE = null;
 
     private PreferencesManager mPreferencesManager;
-    private Context mContext;//добавлено для соответствия
+    private Context mContext;
     private RestService mRestService;
+
 
 
     public DataManager() {
         this.mPreferencesManager = new PreferencesManager();
         this.mContext = DevintensiveApplication.getContext();
         this.mRestService = ServiceGenerator.createService(RestService.class);
-
     }
 
     public static DataManager getInstance() {
@@ -52,10 +50,18 @@ public class DataManager {
     public Call<UserModelRes> loginUser(UserLoginReq userLoginReq) {
         return mRestService.loginUser(userLoginReq);
     }
+
+    public Call<ResponseBody> uploadPhoto(String userId, MultipartBody.Part file) {
+        return mRestService.uploadPhoto(userId, file);
+    }
+
+    public Call<UserListRes> getUserList (){
+        return mRestService.getUserList();
+    }
     //endregion
 
 
-    public Call<ResponseBody> getImage(String url) {
+   /* public Call<ResponseBody> getImage(String url) {
         return mRestService.getImage(url);
     }
 
@@ -65,8 +71,7 @@ public class DataManager {
         MultipartBody.Part bodyPart =
                 MultipartBody.Part.createFormData("photo", photoFile.getName(), requestBody);
         return mRestService.uploadPhoto(userId, bodyPart);
-    }
-
+    }*/
 
     //      ----------- Database --------------
 

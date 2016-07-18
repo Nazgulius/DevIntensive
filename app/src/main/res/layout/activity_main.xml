@@ -21,7 +21,7 @@
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing_profile"
+                android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentScrim="@color/color_primary"
@@ -29,15 +29,15 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/image_profil_spacing_256dp"
+                    android:layout_height="@dimen/profile_image_size"
                     android:fitsSystemWindows="true">
 
                     <ImageView
                         android:id="@+id/user_photo_img"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/image_profil_spacing_256dp"
+                        android:layout_height="@dimen/profile_image_size"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/user_foto_256"/>
+                        android:src="@drawable/user_foto"/>
 
                     <RelativeLayout
                         android:id="@+id/profile_placeholder"
