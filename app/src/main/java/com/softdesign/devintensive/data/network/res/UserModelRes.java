@@ -16,7 +16,7 @@ public class UserModelRes {
     @Expose
     private Data data;
 
-    public Data getData(){
+    public Data getData() {
         return data;
     }
 
@@ -56,16 +56,12 @@ public class UserModelRes {
         @Expose
         private String updated;
 
-        public String getId() {
-            return id;
-        }
-
         public ProfileValues getProfileValues() {
             return profileValues;
         }
 
-        public Contacts getContacts() {
-            return contacts;
+        public String getId() {
+            return id;
         }
 
         public String getFirstName() {
@@ -76,12 +72,16 @@ public class UserModelRes {
             return secondName;
         }
 
-        public PublicInfo getPublicInfo() {
-            return publicInfo;
-        }
-
         public Repositories getRepositories() {
             return repositories;
+        }
+
+        public Contacts getContacts() {
+            return contacts;
+        }
+
+        public PublicInfo getPublicInfo() {
+            return publicInfo;
         }
     }
 

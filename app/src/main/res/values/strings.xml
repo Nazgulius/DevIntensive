@@ -1,51 +1,37 @@
 <resources>
+    <!-- Font Family -->
+    <string name="ff_regular">sans-serif</string>
+    <string name="ff_medium">sans-serif-medium</string>
+
     <string name="app_name">Чалых Максим</string>
+    <string name="profile.bio.dummy">"Утро вечера мудренее, но и в вечере что-то есть" Владимир Высоцкии</string>
+    <string name="profile.bio.hint">О себе</string>
+    <string name="profile.git.dummy">github.com/Nazgulius/DevIntensive</string>
+    <string name="profile.git.hint">Репозиторий</string>
+    <string name="profile.vk.dummy">vk.com/id7767648</string>
+    <string name="profile.vl.hint">Профиль в VK</string>
+    <string name="profile.email.dummy">xxx@xxx.xx</string>
+    <string name="profile.email.hint">E-mail</string>
+    <string name="profile.phone.dummy">8-(926)-782-60-22</string>
+    <string name="profile.phone.hint">Мобильный</string>
+    <string name="profile.statistic.project.label">Проектов</string>
+    <string name="profile.statistic.project.dummy">5</string>
+    <string name="profile.statistic.coded.label">Написано строк кода</string>
+    <string name="profile.statistic.coded.dummy">500</string>
+    <string name="profile.statistic.rating.label">Рейтинг</string>
+    <string name="profile.statistic.rating.dummy">1</string>
 
-    <string name="user_name">Чалых Максим</string>
-    <string name="about_me">"Утро вечера мудренее, но и в вечере что-то есть."  ©Высоцкий В.С.</string>
-    <string name="about_title">О себе</string>
-    <string name="repozitori_title">Репозиторий</string>
-    <string name="repozitori_text">github.com/Nazgulius/DevIntensive</string>
-    <string name="prof_social_title">Профиль в VK</string>
-    <string name="prof_social_text">vk.com/id7767648</string>
-    <string name="mail_title">Электронная почта</string>
-    <string name="mail_text">nazgulius@yandex.ru</string>
-    <string name="phone_title">Мобильный телефон</string>
-    <string name="phone_text">+7 (926) 782-60-22</string>
+    <string name="profile.placeholder.image">Изменить фотографию профиля</string>
+    <string name="profile.dialog.gallery">Загрузить из галлереи</string>
+    <string name="profile.dialog.camera">Сделать снимок</string>
+    <string name="profile.dialog.cancel">Отмена</string>
+    <string name="profile_dialog_title">Изменить фотографию профиля</string>
+    <string name="profile.choose.message">Выберите фото</string>
+    <string name="permission_alert_message">Для корректной работы приложения необходимо дать требуемые права</string>
 
-    <string name="quantity_rating">4</string>
-    <string name="quantity_lines_code">500</string>
-    <string name="quantity_projects">1</string>
-    <string name="rating">Рейтинг</string>
-    <string name="lines_code">Написано строк кода</string>
-    <string name="projects">Проектов</string>
-    <string name="sans_serif_condensed">sans-serif-condensed</string>
-
-    <string name="menu_me_profile">Мой профиль</string>
-    <string name="menu_team">Команда</string>
-    <string name="user_profile.placeholder.image">Изменить фотографию профеля</string>
-    <string name="user_profile.dialog.galerey">Загрузить из галереи</string>
-    <string name="user_profile.dialog.camera">Сделать снимок</string>
-    <string name="user_profile.dialog.cancel">Отмена</string>
-    <string name="user_profile.dialog.title">Изменить фотографию пользователя</string>
-    <string name="user_profile.chose.messege">Выберите фото</string>
-    <string name="message_need_take_permissions">Для корректной работы приложения необходимо дать требуемые разрешение</string>
-    <string name="main_activity_error_not_found_call_app">Не найдено приложение для звонка</string>
-    <string name="title_activity_login">Sign in</string>
-
-    <!-- login activity -->
-    <string name="prompt_email">E-mail</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">ВОЙТИ</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="user_profile.empty_bio">Этот пользователь пока о себе ничего не написал...</string>
-
-
+    <string name="login.password_hint">Пароль</string>
+    <string name="login.forgot_password">Забыли пароль?</string>
+    <string name="login.enter_button.label">Войти</string>
+    <string name="login.enter_label">Войти</string>
+    <string name="placeholder_text">placeholder</string>
 </resources>

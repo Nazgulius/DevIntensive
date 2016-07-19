@@ -6,23 +6,22 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class DevintensiveApplication extends Application {
-    private static SharedPreferences sSharedPreferencec;
-    private static Context mContext;
 
-    public static Context getContext() {
-        return mContext;
+    public static SharedPreferences sSharedPreferences;
+    private static Context sContext = getContext();
+
+    public static SharedPreferences getSharedPreferences() {
+        return sSharedPreferences;
     }
 
+    public static Context getContext() {
+        return sContext;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        sSharedPreferencec = PreferenceManager.getDefaultSharedPreferences(this);
-        mContext = this;
-    }
-
-    public static SharedPreferences getSharedPreferencec() {
-        return sSharedPreferencec;
+        sSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 }

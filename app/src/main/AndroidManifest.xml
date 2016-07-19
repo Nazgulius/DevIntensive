@@ -2,33 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.softdesign.devintensive">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:name="android.hardware.camera2"
-        android:required="false"/>
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.camera2.autofocus"
-        android:required="false"/>
-    <!--
-    &lt;!&ndash;  общая телефония &ndash;&gt;
-    <uses-feature android:name="android.hardware.telephony"/>
-    &lt;!&ndash;  CDMA-телефония &ndash;&gt;
-    <uses-feature android:name="android.hardware.telephony.cdma"/>
-    &lt;!&ndash;  GSM-телефония &ndash;&gt;
-    <uses-feature android:name="android.hardware.telephony.gsm"/>
-    -->
+        android:required="false" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".utils.DevintensiveApplication"
@@ -39,20 +25,35 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.MainActivity">
 
-        </activity>
-        <activity
-            android:name=".ui.activities.LoginActivity"
-            android:parentActivityName=".ui.activities.MainActivity">
+            <!--
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            -->
+        </activity>
+        <activity android:name=".ui.activities.LoginActivity">
+
+
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+
+        </activity>
+        <activity android:name=".ui.activities.UserListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activities.ProfileUserActivity"
+                  android:parentActivityName=".ui.activities.UserListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.UserListActivity"/>
+        </activity>
     </application>
 
 </manifest>
