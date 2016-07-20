@@ -11,6 +11,7 @@ import org.greenrobot.greendao.annotation.Unique;
 
 @Entity(active = true, nameInDb = "REPOSITORIES")
 public class Repository {
+
     @Id
     private Long id;
 

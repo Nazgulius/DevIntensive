@@ -41,4 +41,5 @@ public class DevintensiveApplication extends Application {
     }
 
     public static DaoSession getsDaoSession() { return sDaoSession;   }
+
 }
